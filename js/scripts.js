@@ -11,21 +11,21 @@ var replaceWord = function(haystack, needle, replaceWord) {
     return result;
 }
 
-//
-// $(document).ready(function() {
-//
-//   $("form#triangle").submit(function(event) {
-//
-//     var height = parseInt($("input#height").val());
-//     var length = parseInt($("input#length").val());
-//     var width = parseInt($("input#width").val());
-//
-//     var result = checkTriangle(height, length, width);
-//
-//     $(".triangleResult").text(result);
-//     $("#result").show();
-//
-//     event.preventDefault();
-//
-//   });
-// });
+
+$(document).ready(function() {
+
+  $("form#stringform").submit(function(event) {
+
+    var sentence = $("input#sentence").val();
+    var needle = $("input#needle").val();
+    var wordToReplace = $("input#wordToReplace").val();
+
+    var result = replaceWord(sentence, needle, wordToReplace);
+
+    $(".text").text(result);
+    $("#result").show();
+
+    event.preventDefault();
+
+  });
+});
